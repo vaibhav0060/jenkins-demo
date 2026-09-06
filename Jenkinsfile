@@ -19,7 +19,7 @@ pipeline {
 		}
         stage('Docker container Run ') {
 			steps {
-				sh "docker run -d -p 5000:5000 docker-jenkins-demo:1.0"
+				sh "docker run -d -p 5001:5001 docker-jenkins-demo:1.0"
 			}
 		}
 	}
