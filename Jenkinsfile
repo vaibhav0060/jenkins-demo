@@ -12,5 +12,15 @@ pipeline {
 				echo 'pipeline successful'
 			}
 		}
+        stage('Docker Build') {
+			steps {
+				docker build -t docker-jenkins-demo:1.0 .
+			}
+		}
+        stage('Docker container Run ') {
+			steps {
+				docker run -d -p 5000:5000 docker-jenkins-demo:1.0
+			}
+		}
 	}
 }
